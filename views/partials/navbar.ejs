@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top text-light p-3">
+    <div class="container">
+        <a class="navbar-brand" href="/">L U X E</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <!-- <a class="nav-item nav-link" href="html/aboutus.html">About</a> -->
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/products">All Products</a>
+                <% if(locals.user) { %>
+                    <a class="nav-item nav-link" href="#">Hey, <%= user.fname %> </a>
+                    <form action="/logout" method="POST" class="form-inline">
+                        <button class="btn text-muted">Logout</button>
+                        <!-- <a class="nav-item nav-link" href="#">Logout</a> -->
+                    </form>
+                <% } else { %>  
+                    <a class="nav-item nav-link" href="/login">Login</a>
+                <% } %> 
+                <a class="nav-item nav-link" href="#"><i class="fas fa-search"></i></a>
+                <a class="nav-item nav-link" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </div>
+</nav>
